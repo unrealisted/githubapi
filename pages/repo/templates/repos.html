@@ -1,0 +1,27 @@
+<div class="block" data-ng-if="userIsLogined">
+<div class="block1">
+    <a data-ng-href="following"><button class="btn btn-default" type="button">ToFollowing</button></a>
+    <button class="btn btn-default" type="submit" data-ng-show="form.userform.token.$valid" data-ng-click="createRepo(token, nameRepo)">Create</button>
+    <input type="text" name="reponame" class="form-control" placeholder="Name" data-ng-show="form.userform.token.$valid" data-ng-model="nameRepo" required>
+    <button class="btn btn-default" type="submit" data-ng-show="form.userform.token.$valid" data-ng-click="editRepo(token, newNameRepo, nameRepo)">Edit</button>
+    <input type="text" name="reponewname" class="form-control" placeholder="Name" data-ng-show="form.userform.token.$valid" data-ng-model="newNameRepo">
+    <button class="btn btn-default" type="submit" data-ng-show="form.userform.token.$valid" data-ng-click="deleteRepo(token, newNameRepo)">Delete</button>
+</div>
+<div class="block2 panel-body">
+    <input name="search" type="text" placeholder="Search" class="form-control" data-ng-model="letter">
+    <div class="list-group">
+        <div data-ng-repeat="repo in repoData | repoFilter:letter" class="list-group-item">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4><a data-ng-href="{{repo.html_url}}">{{repo.name}}</a></h4>
+                </div>
+                <div class="col-md-4">
+                    <dl class="dl-horizontal">
+                        <dt>Created:</dt><dd>{{repo.created_at | date:short:timezone}}</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

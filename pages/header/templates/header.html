@@ -1,0 +1,19 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3>GitHubApi</h3>
+        <div class="input-group">
+            <form class="myform" name="form.userform">
+                <input type="text" name="username" class="form-control" placeholder="Username" data-ng-model="$root.username" required>
+                <input type="text" name="token" class="form-control" placeholder="Token" data-ng-model="$root.token" required>
+            <span class="input-group-btn">
+                <button id="Auth" class="btn btn-default" type="submit" data-ng-click="auth(username)">Auth</button>
+                <!-- <button id="oauth" class="btn btn-default" type="submit" data-ng-click="oauth()">oauth</button> -->
+            </span>
+            </form>
+        </div>
+        <div class="userlogo">
+            <img data-ng-src="{{userData.avatar_url}}" alt="">
+            <p>{{userData.name}}</p>
+        </div>
+    </div>
+</div>

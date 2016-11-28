@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="gha">
+<head>
+    <title>GH</title>
+    <link href="library/bootstrap.css" rel="stylesheet"/>
+    <link href="css/main.css" rel="stylesheet"/>
+    <link href="library/bootstrap-theme.css" rel="stylesheet"/>
+    <base href="http://unrealisted.github.io/api_js_frameworks/ghapi_angular/">
+</head>
+<body>
+<header data-ng-include="'pages/header/templates/header.html'"></header>
+<div class="content" data-ng-view data-ng-init="form={}"></div>
+<footer></footer>
+<!-- Libs -->
+<script src="library/jquery.js" defer></script>
+<script src="library/bootstrap.js" defer></script>
+<script src="library/angular.js"></script>
+<script src="library/angular-route.js" defer></script>
+<script src="library/angular-animate.js" defer></script>
+<!-- repo -->
+<script src="pages/repo/module.js" defer></script>
+<script src="pages/repo/controllers/repoCtrl.js" defer></script>
+<script src="pages/repo/filters/repoFilter.js" defer></script>
+<script src="pages/repo/services/ghService.js" defer></script>
+<!-- following -->
+<script src="pages/follow/module.js" defer></script>
+<script src="pages/follow/controllers/followingCtrl.js" defer></script>
+
+<script src="app.js" defer></script>
+</body>
+</html>
